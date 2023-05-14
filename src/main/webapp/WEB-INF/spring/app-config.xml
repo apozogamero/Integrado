@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+       
+       <bean id="pilotoManager" class="es.sotero.integrado.business.services.SimplePilotoManager">
+         <property name="pilotos">
+            <list>
+                <ref bean="piloto1"/>
+                <ref bean="piloto2"/>
+                <ref bean="piloto3"/>
+            </list>
+         </property>
+       </bean>
+
+       <bean id="piloto1" class="es.sotero.integrado.business.entities.Piloto">
+         <property name="nombre" value="Paco Martínez"/>
+         <property name="dni" value="11112222A"/>
+         <property name="sexo" value="M"/>
+         <property name="edad" value="25"/>
+       </bean>
+        
+       <bean id="piloto2" class="es.sotero.integrado.business.entities.Piloto">
+         <property name="nombre" value="Isidro García"/>
+         <property name="dni" value="22223333B"/>
+         <property name="sexo" value="M"/>
+         <property name="edad" value="44"/>
+       </bean>
+
+       <bean id="piloto3" class="es.sotero.integrado.business.entities.Piloto">
+         <property name="nombre" value="María López"/>
+         <property name="dni" value="33334444C"/>
+         <property name="sexo" value="F"/>
+         <property name="edad" value="31"/>
+       </bean>
+
+       <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+         <property name="basename" value="messages"/>
+       </bean>
+
+       <!-- Scans the classpath of this application for @Components to deploy as beans -->
+       <context:component-scan base-package="es.sotero.integrado.web" />
+
+       <!-- Configures the @Controller programming model -->
+       <mvc:annotation-driven/>
+       
+       <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
+         <property name="prefix" value="/WEB-INF/views/"></property>
+         <property name="suffix" value=".jsp"></property>        
+       </bean>
+
+</beans>
