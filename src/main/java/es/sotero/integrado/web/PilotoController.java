@@ -1,13 +1,7 @@
 package es.sotero.integrado.web;
 
-import java.io.IOException;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -21,26 +15,18 @@ import es.sotero.integrado.business.services.PilotoManager;
 @Controller
 public class PilotoController {
 
-    protected final Log logger = LogFactory.getLog(getClass());
-    
+	protected final Log logger = LogFactory.getLog(getClass());
+
     @Autowired
-    private PilotoManager pilotoManager;
-
-    public void setPilotoManager(PilotoManager pilotoManager) {
-		this.pilotoManager = pilotoManager;
-	}
-
-	@RequestMapping(value="/hello.htm")
-    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-    	String now = (new Date()).toString();
-        logger.info("Returning hello view with " + now);
-
+    private PilotoManager pilManager;
+    
+    @RequestMapping(value="/getPilotoAll.htm")
+    public ModelAndView handleRequest() {
+		logger.info("Returning mostrarPilotos view");
+		
         Map<String, Object> myModel = new HashMap<String, Object>();
-        myModel.put("now", now);
-        myModel.put("pilotos", this.pilotoManager.getPilotos());
+        myModel.put("listaPil", this.pilManager.getPilotoAll());
 
-        return new ModelAndView("hello", "model", myModel);
+        return new ModelAndView("mostrarPilotos", "model", myModel);
     }
 }
