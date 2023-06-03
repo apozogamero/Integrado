@@ -4,8 +4,8 @@ import org.springframework.data.repository.CrudRepository;
 
 import es.sotero.integrado.business.entities.Piloto;
 
-public interface PilotoRepository extends CrudRepository<Piloto, Long> {
+public interface PilotoRepository extends CrudRepository<Piloto, String> {
 
-	public Piloto findById(String id);
+	public Piloto findByDni(String dni);
 
 }

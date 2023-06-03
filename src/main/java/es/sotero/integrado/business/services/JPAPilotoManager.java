@@ -19,7 +19,7 @@ public class JPAPilotoManager implements PilotoManager {
     }
 
 	@Override
-	public Piloto getPiloto(String id) {
-		return pilRepository.findById(id);
+	public Piloto getPiloto(String dni) {
+		return pilRepository.findByDni(dni);
 	}
 }

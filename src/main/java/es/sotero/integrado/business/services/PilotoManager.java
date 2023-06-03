@@ -8,5 +8,6 @@ public interface PilotoManager {
     
     public List<Piloto> getPilotoAll();
     
-    public Piloto getPiloto(String id);
+    public Piloto getPiloto(String dni);
+
 }

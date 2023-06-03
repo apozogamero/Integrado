@@ -17,7 +17,7 @@ public class SimplePilotoManager implements PilotoManager {
         this.listaPil = listaPil;
     }
 
-	public Piloto getPiloto(String id) {
+	public Piloto getPiloto(String dni) {
 		return pil;
 	}
 }
