@@ -1,12 +1,26 @@
 package es.sotero.integrado.business.entities;
 
-import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-public class Aeronave implements Serializable {
-	
-	private static final long serialVersionUID = 1L;
+@Entity
+@Table(name="aeronave")
+public class Aeronave {
 
-    private String nombre;
+	@Id
+	@Column(name="id")
+	public Long id;
+	public String nombre;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getNombre() {
 		return nombre;

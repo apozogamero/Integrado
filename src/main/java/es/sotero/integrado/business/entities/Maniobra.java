@@ -1,15 +1,30 @@
 package es.sotero.integrado.business.entities;
 
-import java.io.Serializable;
 import java.sql.Date;
 
-public class Maniobra implements Serializable {
-	
-	private static final long serialVersionUID = 1L;
-	
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="maniobra")
+public class Maniobra {
+
+	@Id
+	@Column(name="id")
+	public Long id;
 	private String descripcion;
 	private Date fecha;
 	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public String getDescripcion() {
 		return descripcion;
 	}

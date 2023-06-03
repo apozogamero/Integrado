@@ -20,20 +20,4 @@ public class SimplePilotoManager implements PilotoManager {
 	public Piloto getPiloto(String id) {
 		return pil;
 	}
-
-//    public int averageEdad() {
-//    	if (pilotos != null) {
-//    		
-//    		int suma = 0;
-//    		
-//            for (Piloto piloto : pilotos) {
-//                suma += piloto.getEdad();
-//            }
-//            
-//            int result = suma / pilotos.size();
-//            return result;
-//        } else {
-//        	return -1;
-//        }
-//	}
 }

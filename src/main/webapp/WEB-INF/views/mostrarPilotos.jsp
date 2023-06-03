@@ -37,7 +37,7 @@
 			<td>Sexo</td>
 			<td>Edad</td>
 		</tr>
-		<c:forEach var="emp" items="${model.listaPil}">
+		<c:forEach var="pil" items="${model.listaPil}">
 			<tr>
 				<th><c:out value="${pil.id}"></c:out></th>
 				<th><c:out value="${pil.nombre}"></c:out></th>

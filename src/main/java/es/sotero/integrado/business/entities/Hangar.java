@@ -1,14 +1,28 @@
 package es.sotero.integrado.business.entities;
 
-import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-public class Hangar implements Serializable {
-	
-	private static final long serialVersionUID = 1L;
-	
+@Entity
+@Table(name="hangar")
+public class Hangar {
+
+	@Id
+	@Column(name="id")
+	public Long id;
 	private String nombre;
 	private int capacidad;
 	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}

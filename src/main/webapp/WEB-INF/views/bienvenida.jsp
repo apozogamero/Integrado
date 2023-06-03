@@ -7,19 +7,17 @@
  	<style>
         body {
             text-align: center;
-            display: flex;
-            justify-content: center;
-            flex-flow: row wrap;
         }
         h1 {
         	width: 100%;
-        	margin-bottom: 50px;
+        	margin: 30px 0;
         }
         div {
         	width: 250px;
         	padding: 15px 10px;
         	border: 1px solid black;
-        	margin: 0 10px;
+        	margin: 0 auto;
+        	text-align: center;
         }
  	</style>
 </head>

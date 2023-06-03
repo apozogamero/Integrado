@@ -1,13 +1,10 @@
 package es.sotero.integrado.business.services;
 
-
 import java.util.List;
 
 import es.sotero.integrado.business.entities.Piloto;
 
 public interface PilotoManager {
-	
-//	public int averageEdad();
     
     public List<Piloto> getPilotoAll();
     

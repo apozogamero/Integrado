@@ -12,7 +12,7 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd"> 
        
        <bean id="pilotoManager" class="es.sotero.integrado.business.services.SimplePilotoManager">
-         <property name="pilotos">
+         <property name="listaPil">
             <list>
                 <ref bean="piloto1"/>
                 <ref bean="piloto2"/>
