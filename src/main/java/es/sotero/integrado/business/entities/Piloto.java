@@ -2,7 +2,11 @@ package es.sotero.integrado.business.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -10,12 +14,23 @@ import javax.persistence.Table;
 public class Piloto{
 
 	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	public Long id;
 	public String nombre;
     public String dni;
 	public char sexo;
 	public int edad;
+	@OneToOne(mappedBy = "piloto", fetch = FetchType.LAZY)
+	public Aeronave aeronave;
+
+	public Aeronave getAeronave() {
+		return aeronave;
+	}
+
+	public void setAeronave(Aeronave aeronave) {
+		this.aeronave = aeronave;
+	}
 
 	public Long getId() {
 		return id;

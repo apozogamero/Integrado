@@ -6,6 +6,6 @@ import es.sotero.integrado.business.entities.Aeronave;
 
 public interface AeronaveRepository extends CrudRepository<Aeronave, Long> {
 
-	public Aeronave findById(String id);
+	public Aeronave findById(int id);
 	
 }

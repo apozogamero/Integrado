@@ -8,5 +8,5 @@ public interface AeronaveManager {
     
     public List<Aeronave> getAeronaveAll();
     
-    public Aeronave getAeronave(String id);
+    public Aeronave getAeronave(int id);
 }

@@ -19,7 +19,7 @@ public class JPAAeronaveManager implements AeronaveManager {
     }
 
 	@Override
-	public Aeronave getAeronave(String id) {
+	public Aeronave getAeronave(int id) {
 		return aerRepository.findById(id);
 	}
 }

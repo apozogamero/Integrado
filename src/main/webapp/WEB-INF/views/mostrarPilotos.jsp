@@ -36,6 +36,7 @@
 			<td>DNI</td>
 			<td>Sexo</td>
 			<td>Edad</td>
+ 			<td>Aeronave</td>
 		</tr>
 		<c:forEach var="pil" items="${model.listaPil}">
 			<tr>
@@ -44,6 +45,7 @@
 				<th><c:out value="${pil.dni}"></c:out></th>
 				<th><c:out value="${pil.sexo}"></c:out></th>
 				<th><c:out value="${pil.edad}"></c:out></th>
+				<th><c:out value="${pil.aeronave}"></c:out></th>
 			</tr>
 		</c:forEach>
 	</table>

@@ -17,7 +17,7 @@ public class SimpleAeronaveManager implements AeronaveManager {
         this.listaAer = listaAer;
     }
 
-	public Aeronave getAeronave(String id) {
+	public Aeronave getAeronave(int id) {
 		return aer;
 	}
 }
