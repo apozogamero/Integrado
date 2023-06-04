@@ -1,11 +1,8 @@
 package es.sotero.integrado.business.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.util.List;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name="hangar")
@@ -15,8 +12,13 @@ public class Hangar {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	public Long id;
-	private String nombre;
-	private int capacidad;
+	
+	public String nombre;
+	
+	public int capacidad;
+	
+	@OneToMany(cascade = {CascadeType.ALL}, mappedBy = "hangar")
+	public List<Aeronave> aeronaveList;
 	
 	public Long getId() {
 		return id;
@@ -45,6 +47,14 @@ public class Hangar {
 	@Override
 	public String toString() {
 		return "Hangar [nombre=" + nombre + ", capacidad=" + capacidad + "]";
+	}
+
+	public List<Aeronave> getAeronaveList() {
+		return aeronaveList;
+	}
+
+	public void setAeronaveList(List<Aeronave> aeronaveList) {
+		this.aeronaveList = aeronaveList;
 	}
 
 }

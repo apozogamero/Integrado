@@ -2,12 +2,7 @@ package es.sotero.integrado.business.entities;
 
 import java.sql.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="averia")
@@ -17,7 +12,13 @@ public class Averia {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	public Long id;
+	
+	@ManyToOne(cascade = {CascadeType.ALL})
+	@JoinColumn(name="id_aeronave")
+	public Aeronave aeronave;
+	
 	public String descripcion;
+	
 	public Date fecha;
 	
 	public Long getId() {
@@ -47,6 +48,14 @@ public class Averia {
 	@Override
 	public String toString() {
 		return "Averia [descripcion=" + descripcion + ", fecha=" + fecha + "]";
+	}
+
+	public Aeronave getAeronave() {
+		return aeronave;
+	}
+
+	public void setAeronave(Aeronave aeronave) {
+		this.aeronave = aeronave;
 	}
 
 }

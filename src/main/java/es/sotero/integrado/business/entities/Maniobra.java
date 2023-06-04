@@ -1,13 +1,9 @@
 package es.sotero.integrado.business.entities;
 
 import java.sql.Date;
+import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="maniobra")
@@ -17,8 +13,18 @@ public class Maniobra {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	public Long id;
-	private String descripcion;
-	private Date fecha;
+	
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
+    @JoinTable(
+        name = "man_pat",
+        joinColumns = @JoinColumn(name = "id_maniobra"),
+        inverseJoinColumns = @JoinColumn(name = "id_patrulla")
+    )
+    private List<Patrulla> patrullaList;
+	
+	public String descripcion;
+	
+	public Date fecha;
 	
 	public Long getId() {
 		return id;

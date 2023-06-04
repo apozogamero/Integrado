@@ -1,3 +1,4 @@
+DROP TABLE MAN_PAT;
 DROP TABLE AVERIA;
 DROP TABLE AERONAVE;
 DROP TABLE USUARIO;
@@ -37,11 +38,9 @@ CREATE TABLE patrulla (
 
 CREATE TABLE maniobra (
     id NUMBER,
-    id_patrulla NUMBER,
     descripcion VARCHAR(200),
     fecha DATE,
-    CONSTRAINT maniobra_pk PRIMARY KEY (id),
-    CONSTRAINT maniobra_fk_idpatrulla FOREIGN KEY (id_patrulla) REFERENCES patrulla (id)
+    CONSTRAINT maniobra_pk PRIMARY KEY (id)
 );
 
 CREATE TABLE usuario (
@@ -70,4 +69,11 @@ CREATE TABLE averia (
     fecha DATE,
     CONSTRAINT averia_pk PRIMARY KEY (id),
     CONSTRAINT averia_fk_idaeronave FOREIGN KEY (id_aeronave) REFERENCES aeronave (id)
+);
+
+CREATE TABLE man_pat (
+    id_maniobra NUMBER,
+    id_patrulla NUMBER,
+    CONSTRAINT manpat_fk_idmaniobra FOREIGN KEY (id_maniobra) REFERENCES maniobra (id),
+    CONSTRAINT manpat_fk_idpatrulla FOREIGN KEY (id_patrulla) REFERENCES patrulla (id)
 );

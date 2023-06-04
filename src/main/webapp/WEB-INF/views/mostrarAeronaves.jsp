@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Lista Pilotos</title>
+	<title>Lista Aeronaves</title>
 	<style>
         table {
         	border: 1px solid black;
@@ -27,25 +27,21 @@
 	</style>
 </head>
 <body>
-	<h1>Lista de pilotos</h1>
+	<h1>Lista de aeronaves</h1>
 
 	<table>
 		<tr>
 			<td>ID</td>
 			<td>Nombre</td>
-			<td>DNI</td>
-			<td>Sexo</td>
-			<td>Edad</td>
- 			<td>Aeronave</td>
+			<td>Modelo</td>
+			<td>Piloto</td>
 		</tr>
-		<c:forEach var="pil" items="${model.listaPil}">
+		<c:forEach var="aer" items="${model.listaAer}">
 			<tr>
-				<th><c:out value="${pil.id}"></c:out></th>
-				<th><c:out value="${pil.nombre}"></c:out></th>
-				<th><c:out value="${pil.dni}"></c:out></th>
-				<th><c:out value="${pil.sexo}"></c:out></th>
-				<th><c:out value="${pil.edad}"></c:out></th>
-				<th><c:out value="${pil.aeronave.id}"></c:out></th>
+				<th><c:out value="${aer.id}"></c:out></th>
+				<th><c:out value="${aer.nombre}"></c:out></th>
+				<th><c:out value="${aer.modelo.nombre}"></c:out></th>
+				<th><c:out value="${aer.piloto.nombre}"></c:out></th>
 			</tr>
 		</c:forEach>
 	</table>

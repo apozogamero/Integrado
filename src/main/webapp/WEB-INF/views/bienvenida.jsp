@@ -24,7 +24,13 @@
 <body>
 	<h1>Integrado</h1>
 	<div>
-    	<a href="<c:url value="getPilotoAll.htm"/>">Mostrar todos los pilotos</a>
+    	<a href="<c:url value="getPilotoAll.htm"/>">PILOTOS</a>
+	</div>
+	<div>
+    	<a href="<c:url value="getAeronaveAll.htm"/>">AERONAVES</a>
+	</div>
+	<div>
+    	<a href="<c:url value="getModeloAll.htm"/>">MODELOS</a>
 	</div>
 </body>
 </html>
