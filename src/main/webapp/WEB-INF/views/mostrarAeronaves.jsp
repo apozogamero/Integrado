@@ -35,6 +35,9 @@
 			<td>Nombre</td>
 			<td>Modelo</td>
 			<td>Piloto</td>
+			<td>Hangar</td>
+			<td>Patrulla</td>
+			<td>Averías</td>
 		</tr>
 		<c:forEach var="aer" items="${model.listaAer}">
 			<tr>
@@ -42,11 +45,19 @@
 				<th><c:out value="${aer.nombre}"></c:out></th>
 				<th><c:out value="${aer.modelo.nombre}"></c:out></th>
 				<th><c:out value="${aer.piloto.nombre}"></c:out></th>
+				<th><c:out value="${aer.hangar.id}"></c:out></th>
+				<th><c:out value="${aer.patrulla.nombre}"></c:out></th>
+				<th>
+					<c:forEach var="averia" items="${aer.averiaList}">
+					<c:out value="${averia.id}"></c:out><br/>
+					</c:forEach>
+				</th>
 			</tr>
 		</c:forEach>
 	</table>
 	
 	<br/>
 	<a href="<c:url value="bienvenida.htm"/>">Volver</a>
+	<a href="<c:url value="getAeronave.htm"/>">Buscar aeronave</a>
 </body>
 </html></html>

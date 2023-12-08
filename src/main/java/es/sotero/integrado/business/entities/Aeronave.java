@@ -4,6 +4,9 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 @Entity
 @Table(name="aeronave")
 public class Aeronave {
@@ -11,7 +14,7 @@ public class Aeronave {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
-	public Long id;
+	public int id;
 	
 	public String nombre;
 	
@@ -31,15 +34,16 @@ public class Aeronave {
 	@ManyToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name="id_patrulla")
 	public Patrulla patrulla;
-	
+
+	@LazyCollection(LazyCollectionOption.FALSE)
 	@OneToMany(cascade = {CascadeType.ALL}, mappedBy = "aeronave")
 	public List<Averia> averiaList;
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

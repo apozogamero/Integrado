@@ -39,12 +39,17 @@
 			<tr>
 				<th><c:out value="${mo.id}"></c:out></th>
 				<th><c:out value="${mo.nombre}"></c:out></th>
-<%-- 				<th><c:out value="${mo.aeronaveList}"></c:out></th> --%>
+				<th>
+					<c:forEach var="aeronave" items="${mo.aeronaveList}">
+					<c:out value="${aeronave.nombre}"></c:out><br/>
+					</c:forEach>
+				</th>
 			</tr>
 		</c:forEach>
 	</table>
 	
 	<br/>
 	<a href="<c:url value="bienvenida.htm"/>">Volver</a>
+	<a href="<c:url value="getModelo.htm"/>">Buscar modelo</a>
 </body>
 </html></html>

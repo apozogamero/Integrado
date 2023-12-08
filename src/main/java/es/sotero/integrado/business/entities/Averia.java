@@ -11,7 +11,7 @@ public class Averia {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
-	public Long id;
+	public int id;
 	
 	@ManyToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name="id_aeronave")
@@ -21,11 +21,11 @@ public class Averia {
 	
 	public Date fecha;
 	
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

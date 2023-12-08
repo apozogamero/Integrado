@@ -9,7 +9,7 @@ public class Piloto{
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
-	public Long id;
+	public int id;
 	public String nombre;
     public String dni;
 	public char sexo;
@@ -25,11 +25,11 @@ public class Piloto{
 		this.aeronave = aeronave;
 	}
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	

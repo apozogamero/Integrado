@@ -20,4 +20,8 @@ public class SimpleAeronaveManager implements AeronaveManager {
 	public Aeronave getAeronave(int id) {
 		return aer;
 	}
+	
+	public void deleteAeronave(int id) {
+		
+	}
 }

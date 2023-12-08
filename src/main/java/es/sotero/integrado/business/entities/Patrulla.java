@@ -4,6 +4,9 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 @Entity
 @Table(name="patrulla")
 public class Patrulla {
@@ -11,21 +14,23 @@ public class Patrulla {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
-	public Long id;
+	public int id;
 	
 	public String nombre;
-	
+
+	@LazyCollection(LazyCollectionOption.FALSE)
 	@OneToMany(cascade = {CascadeType.ALL}, mappedBy = "patrulla")
 	public List<Aeronave> aeronaveList;
-	
-    @ManyToMany(mappedBy = "patrullaList", fetch = FetchType.EAGER)
+
+	@LazyCollection(LazyCollectionOption.FALSE)
+    @ManyToMany(mappedBy = "patrullaList")
     public List<Maniobra> maniobraList;
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -48,6 +53,14 @@ public class Patrulla {
 
 	public void setAeronaveList(List<Aeronave> aeronaveList) {
 		this.aeronaveList = aeronaveList;
+	}
+
+	public List<Maniobra> getManiobraList() {
+		return maniobraList;
+	}
+
+	public void setManiobraList(List<Maniobra> maniobraList) {
+		this.maniobraList = maniobraList;
 	}
 
 }

@@ -22,4 +22,8 @@ public class JPAAeronaveManager implements AeronaveManager {
 	public Aeronave getAeronave(int id) {
 		return aerRepository.findById(id);
 	}
+	
+	public void deleteAeronave(int id) {
+		aerRepository.deleteById(id);
+	}
 }

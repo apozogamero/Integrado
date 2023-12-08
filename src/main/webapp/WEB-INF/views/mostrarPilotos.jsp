@@ -52,5 +52,6 @@
 	
 	<br/>
 	<a href="<c:url value="bienvenida.htm"/>">Volver</a>
+	<a href="<c:url value="getPiloto.htm"/>">Buscar piloto</a>
 </body>
 </html></html>

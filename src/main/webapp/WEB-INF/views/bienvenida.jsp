@@ -32,5 +32,17 @@
 	<div>
     	<a href="<c:url value="getModeloAll.htm"/>">MODELOS</a>
 	</div>
+	<div>
+    	<a href="<c:url value="getHangarAll.htm"/>">HANGARES</a>
+	</div>
+	<div>
+    	<a href="<c:url value="getPatrullaAll.htm"/>">PATRULLAS</a>
+	</div>
+	<div>
+    	<a href="<c:url value="getManiobraAll.htm"/>">MANIOBRAS</a>
+	</div>
+	<div>
+    	<a href="<c:url value="getAveriaAll.htm"/>">AVERÍAS</a>
+	</div>
 </body>
 </html>

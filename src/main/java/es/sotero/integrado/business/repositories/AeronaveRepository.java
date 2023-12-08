@@ -8,4 +8,6 @@ public interface AeronaveRepository extends CrudRepository<Aeronave, Long> {
 
 	public Aeronave findById(int id);
 	
+	public void deleteById(int id);
+	
 }

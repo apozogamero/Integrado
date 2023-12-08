@@ -5,6 +5,9 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 @Entity
 @Table(name="maniobra")
 public class Maniobra {
@@ -12,9 +15,10 @@ public class Maniobra {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
-	public Long id;
-	
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
+	public int id;
+
+	@LazyCollection(LazyCollectionOption.FALSE)
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
         name = "man_pat",
         joinColumns = @JoinColumn(name = "id_maniobra"),
@@ -26,11 +30,11 @@ public class Maniobra {
 	
 	public Date fecha;
 	
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -53,6 +57,14 @@ public class Maniobra {
 	@Override
 	public String toString() {
 		return "Maniobra [descripcion=" + descripcion + ", fecha=" + fecha + "]";
+	}
+
+	public List<Patrulla> getPatrullaList() {
+		return patrullaList;
+	}
+
+	public void setPatrullaList(List<Patrulla> patrullaList) {
+		this.patrullaList = patrullaList;
 	}
 
 }
