@@ -12,14 +12,29 @@ import es.sotero.integrado.business.repositories.HangarRepository;
 public class JPAHangarManager implements HangarManager {
 
     @Autowired
-    private HangarRepository hanRepository;
+    private HangarRepository hanRep;
 
     public List<Hangar> getHangarAll() {
-        return (List<Hangar>) hanRepository.findAll();
+        return (List<Hangar>) hanRep.findAll();
     }
 
 	@Override
 	public Hangar getHangar(int id) {
-		return hanRepository.findById(id);
+		return hanRep.findByIdHangar(id);
 	}
+    
+	@Override
+    public void addHangar(Hangar h) {
+    	hanRep.save(h);
+    }
+    
+	@Override
+    public void updateHangar(Hangar h) {
+    	hanRep.save(h);
+    }
+    
+    @Override
+    public void deleteHangar(Hangar h) {
+    	hanRep.delete(h);
+    }
 }

@@ -7,11 +7,12 @@
 	<title>Buscar Piloto</title>
 </head>
 <body>
+	
 	<h1>Buscar Piloto</h1>
 	
 	<form:form method="post" modelAttribute="modeloPiloto" action="searchPiloto.htm">
-  		<form:label path="id">DNI del piloto:</form:label>
-  		<form:input path="id"/>
+  		<form:label path="idPiloto">ID del piloto:</form:label>
+  		<form:input path="idPiloto"/>
 		<input type="submit" value="Buscar">
 	</form:form>
 	

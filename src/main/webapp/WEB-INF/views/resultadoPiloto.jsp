@@ -27,7 +27,7 @@
 	</style>
 </head>
 <body>
-	<h1>Resultado de la búsqueda con DNI <c:out value="${model.dni}"></c:out></h1>
+	<h1>Resultado de la búsqueda con ID <c:out value="${model.idPiloto}"></c:out></h1>
 
 	<table>
 		<tr>
@@ -39,12 +39,12 @@
  			<td>Aeronave</td>
 		</tr>
 		<tr>
-			<th><c:out value="${model.id}"></c:out></th>
+			<th><c:out value="${model.idPiloto}"></c:out></th>
 			<th><c:out value="${model.nombre}"></c:out></th>
 			<th><c:out value="${model.dni}"></c:out></th>
 			<th><c:out value="${model.sexo}"></c:out></th>
 			<th><c:out value="${model.edad}"></c:out></th>
-			<th><c:out value="${model.aeronave.id}"></c:out></th>
+			<th><c:out value="${model.aeronave.idAeronave}"></c:out></th>
 		</tr>
 	</table>
 	

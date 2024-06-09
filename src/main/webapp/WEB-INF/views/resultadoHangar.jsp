@@ -27,7 +27,7 @@
 	</style>
 </head>
 <body>
-	<h1>Resultado de la búsqueda con ID <c:out value="${model.id}"></c:out></h1>
+	<h1>Resultado de la búsqueda con ID <c:out value="${model.idHangar}"></c:out></h1>
 
 	<table>
 		<tr>
@@ -37,7 +37,7 @@
 			<td>Aeronaves</td>
 		</tr>
 		<tr>
-			<th><c:out value="${model.id}"></c:out></th>
+			<th><c:out value="${model.idHangar}"></c:out></th>
 			<th><c:out value="${model.nombre}"></c:out></th>
 			<th><c:out value="${model.capacidad}"></c:out></th>
 			<th>

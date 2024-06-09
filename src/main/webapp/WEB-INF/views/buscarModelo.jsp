@@ -10,8 +10,8 @@
 	<h1>Buscar Modelo</h1>
 	
 	<form:form method="post" modelAttribute="modeloModelo" action="searchModelo.htm">
-  		<form:label path="id">ID del modelo:</form:label>
-  		<form:input path="id"/>
+  		<form:label path="idModelo">ID del modelo:</form:label>
+  		<form:input path="idModelo"/>
 		<input type="submit" value="Buscar">
 	</form:form>
 	

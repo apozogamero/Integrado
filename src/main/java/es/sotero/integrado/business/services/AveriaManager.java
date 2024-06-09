@@ -9,4 +9,10 @@ public interface AveriaManager {
     public List<Averia> getAveriaAll();
     
     public Averia getAveria(int id);
+    
+    public void addAveria(Averia av);
+    
+    public void updateAveria(Averia av);
+    
+    public void deleteAveria(Averia av);
 }

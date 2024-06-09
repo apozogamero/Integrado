@@ -12,18 +12,29 @@ import es.sotero.integrado.business.repositories.AeronaveRepository;
 public class JPAAeronaveManager implements AeronaveManager {
 
     @Autowired
-    private AeronaveRepository aerRepository;
+    private AeronaveRepository aerRep;
 
     public List<Aeronave> getAeronaveAll() {
-        return (List<Aeronave>) aerRepository.findAll();
+        return (List<Aeronave>) aerRep.findAll();
     }
 
 	@Override
 	public Aeronave getAeronave(int id) {
-		return aerRepository.findById(id);
+		return aerRep.findByIdAeronave(id);
 	}
+    
+    @Override
+    public void addAeronave(Aeronave a) {
+    	aerRep.save(a);
+    }
+    
+    @Override
+    public void updateAeronave(Aeronave a) {
+    	aerRep.save(a);
+    }
 	
-	public void deleteAeronave(int id) {
-		aerRepository.deleteById(id);
+    @Override
+	public void deleteAeronave(Aeronave a) {
+		aerRep.delete(a);
 	}
 }

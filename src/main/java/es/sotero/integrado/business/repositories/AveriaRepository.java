@@ -6,6 +6,6 @@ import es.sotero.integrado.business.entities.Averia;
 
 public interface AveriaRepository extends CrudRepository<Averia, Long> {
 
-	public Averia findById(int id);
+	public Averia findByIdAveria(int id);
 	
 }

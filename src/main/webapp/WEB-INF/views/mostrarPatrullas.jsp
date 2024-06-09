@@ -36,9 +36,9 @@
 			<td>Aeronaves</td>
 			<td>Maniobras</td>
 		</tr>
-		<c:forEach var="pat" items="${model.listaPat}">
+		<c:forEach var="pat" items="${model}">
 			<tr>
-				<th><c:out value="${pat.id}"></c:out></th>
+				<th><c:out value="${pat.idPatrulla}"></c:out></th>
 				<th><c:out value="${pat.nombre}"></c:out></th>
 				<th>
 					<c:forEach var="aeronave" items="${pat.aeronaveList}">
@@ -47,15 +47,18 @@
 				</th>
 				<th>
 					<c:forEach var="maniobra" items="${pat.maniobraList}">
-					<c:out value="${maniobra.id}"></c:out><br/>
+					<c:out value="${maniobra.idManiobra}"></c:out><br/>
 					</c:forEach>
 				</th>
+				<th><a href="editPatrulla/${pat.idPatrulla}" class="btn btn-warning">Edit</a></th>
+				<th><a href="deletePatrulla/${pat.idPatrulla}" class="btn btn-danger">Delete</a></th>
 			</tr>
 		</c:forEach>
 	</table>
 	
 	<br/>
-	<a href="<c:url value="bienvenida.htm"/>">Volver</a>
+	<a href="addPatrulla">Añadir patrulla</a><br/>
+	<a href="<c:url value="bienvenida.htm"/>">Volver</a><br/>
 	<a href="<c:url value="getPatrulla.htm"/>">Buscar patrulla</a>
 </body>
-</html></html>
+</html>

@@ -10,8 +10,8 @@
 	<h1>Buscar Patrulla</h1>
 	
 	<form:form method="post" modelAttribute="modeloPatrulla" action="searchPatrulla.htm">
-  		<form:label path="id">ID de la patrulla:</form:label>
-  		<form:input path="id"/>
+  		<form:label path="idPatrulla">ID de la patrulla:</form:label>
+  		<form:input path="idPatrulla"/>
 		<input type="submit" value="Buscar">
 	</form:form>
 	

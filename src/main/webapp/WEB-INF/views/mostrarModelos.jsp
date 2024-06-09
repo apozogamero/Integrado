@@ -35,21 +35,24 @@
 			<td>Nombre</td>
 			<td>Aeronaves</td>
 		</tr>
-		<c:forEach var="mo" items="${model.listaMod}">
+		<c:forEach var="mo" items="${model}">
 			<tr>
-				<th><c:out value="${mo.id}"></c:out></th>
+				<th><c:out value="${mo.idModelo}"></c:out></th>
 				<th><c:out value="${mo.nombre}"></c:out></th>
 				<th>
 					<c:forEach var="aeronave" items="${mo.aeronaveList}">
 					<c:out value="${aeronave.nombre}"></c:out><br/>
 					</c:forEach>
 				</th>
+				<th><a href="editModelo/${mo.idModelo}" class="btn btn-warning">Edit</a></th>
+				<th><a href="deleteModelo/${mo.idModelo}" class="btn btn-danger">Delete</a></th>
 			</tr>
 		</c:forEach>
 	</table>
 	
 	<br/>
-	<a href="<c:url value="bienvenida.htm"/>">Volver</a>
+	<a href="addModelo">Añadir modelo</a><br/>
+	<a href="<c:url value="bienvenida.htm"/>">Volver</a><br/>
 	<a href="<c:url value="getModelo.htm"/>">Buscar modelo</a>
 </body>
-</html></html>
+</html>

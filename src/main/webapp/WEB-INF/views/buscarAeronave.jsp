@@ -10,8 +10,8 @@
 	<h1>Buscar Aeronave</h1>
 	
 	<form:form method="post" modelAttribute="modeloAeronave" action="searchAeronave.htm">
-  		<form:label path="id">ID de la aeronave:</form:label>
-  		<form:input path="id"/>
+  		<form:label path="idAeronave">ID de la aeronave:</form:label>
+  		<form:input path="idAeronave"/>
 		<input type="submit" value="Buscar">
 	</form:form>
 	

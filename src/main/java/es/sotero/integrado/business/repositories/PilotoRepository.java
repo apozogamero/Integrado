@@ -1,11 +1,13 @@
 package es.sotero.integrado.business.repositories;
 
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import es.sotero.integrado.business.entities.Piloto;
 
-public interface PilotoRepository extends CrudRepository<Piloto, String> {
+@Repository
+public interface PilotoRepository extends CrudRepository<Piloto, Long> {
 
-	public Piloto findByDni(String dni);
+	public Piloto findByIdPiloto(int id);
 
 }

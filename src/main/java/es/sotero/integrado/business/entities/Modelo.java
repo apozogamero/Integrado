@@ -1,5 +1,6 @@
 package es.sotero.integrado.business.entities;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.*;
@@ -9,12 +10,14 @@ import org.hibernate.annotations.LazyCollectionOption;
 
 @Entity
 @Table(name="modelo")
-public class Modelo {
+public class Modelo implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
-	public int id;
+	public int idModelo;
 	
 	public String nombre;
 	
@@ -22,12 +25,12 @@ public class Modelo {
 	@OneToMany(cascade = {CascadeType.ALL}, mappedBy = "modelo")
 	public List<Aeronave> aeronaveList;
 
-	public int getId() {
-		return id;
+	public int getIdModelo() {
+		return idModelo;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdModelo(int idModelo) {
+		this.idModelo = idModelo;
 	}
 
 	public String getNombre() {

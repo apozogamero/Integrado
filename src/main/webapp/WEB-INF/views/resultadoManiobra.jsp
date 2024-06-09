@@ -27,7 +27,7 @@
 	</style>
 </head>
 <body>
-	<h1>Resultado de la búsqueda con ID <c:out value="${model.id}"></c:out></h1>
+	<h1>Resultado de la búsqueda con ID <c:out value="${model.idManiobra}"></c:out></h1>
 
 	<table>
 		<tr>
@@ -37,7 +37,7 @@
 			<td>Fecha</td>
 		</tr>
 		<tr>
-			<th><c:out value="${model.id}"></c:out></th>
+			<th><c:out value="${model.idManiobra}"></c:out></th>
 			<th>
 				<c:forEach var="patrulla" items="${model.patrullaList}">
 				<c:out value="${patrulla.nombre}"></c:out><br/>

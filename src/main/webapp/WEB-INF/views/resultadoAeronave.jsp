@@ -40,15 +40,15 @@
 			<td>Averías</td>
 		</tr>
 		<tr>
-			<th><c:out value="${model.id}"></c:out></th>
+			<th><c:out value="${model.idAeronave}"></c:out></th>
 			<th><c:out value="${model.nombre}"></c:out></th>
 			<th><c:out value="${model.modelo.nombre}"></c:out></th>
 			<th><c:out value="${model.piloto.nombre}"></c:out></th>
-			<th><c:out value="${model.hangar.id}"></c:out></th>
+			<th><c:out value="${model.hangar.idHangar}"></c:out></th>
 			<th><c:out value="${model.patrulla.nombre}"></c:out></th>
 			<th>
 				<c:forEach var="averia" items="${model.averiaList}">
-				<c:out value="${averia.id}"></c:out><br/>
+				<c:out value="${averia.idAveria}"></c:out><br/>
 				</c:forEach>
 			</th>
 		</tr>

@@ -8,6 +8,11 @@ public interface PilotoManager {
     
     public List<Piloto> getPilotoAll();
     
-    public Piloto getPiloto(String dni);
-
+    public Piloto getPiloto(int id);
+    
+    public void addPiloto(Piloto p);
+    
+    public void updatePiloto(Piloto p);
+    
+    public void deletePiloto(Piloto p);
 }

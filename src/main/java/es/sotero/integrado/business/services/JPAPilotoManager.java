@@ -10,16 +10,31 @@ import es.sotero.integrado.business.repositories.PilotoRepository;
 
 @Service
 public class JPAPilotoManager implements PilotoManager {
-
+	
     @Autowired
-    private PilotoRepository pilRepository;
+    private PilotoRepository pilRep;
 
     public List<Piloto> getPilotoAll() {
-        return (List<Piloto>) pilRepository.findAll();
+        return (List<Piloto>) pilRep.findAll();
     }
 
-	@Override
-	public Piloto getPiloto(String dni) {
-		return pilRepository.findByDni(dni);
+    @Override
+	public Piloto getPiloto(int id) {
+		return pilRep.findByIdPiloto(id);
 	}
+    
+    @Override
+    public void addPiloto(Piloto p) {
+    	pilRep.save(p);
+    }
+    
+    @Override
+    public void updatePiloto(Piloto p) {
+    	pilRep.save(p);
+    }
+    
+    @Override
+    public void deletePiloto(Piloto p) {
+    	pilRep.delete(p);
+    }
 }

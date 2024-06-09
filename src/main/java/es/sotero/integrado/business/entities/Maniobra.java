@@ -1,5 +1,6 @@
 package es.sotero.integrado.business.entities;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 
@@ -10,12 +11,14 @@ import org.hibernate.annotations.LazyCollectionOption;
 
 @Entity
 @Table(name="maniobra")
-public class Maniobra {
+public class Maniobra implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
-	public int id;
+	public int idManiobra;
 
 	@LazyCollection(LazyCollectionOption.FALSE)
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
@@ -30,12 +33,12 @@ public class Maniobra {
 	
 	public Date fecha;
 	
-	public int getId() {
-		return id;
+	public int getIdManiobra() {
+		return idManiobra;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdManiobra(int idManiobra) {
+		this.idManiobra = idManiobra;
 	}
 
 	public String getDescripcion() {

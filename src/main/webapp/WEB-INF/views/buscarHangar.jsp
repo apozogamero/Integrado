@@ -10,8 +10,8 @@
 	<h1>Buscar Hangar</h1>
 	
 	<form:form method="post" modelAttribute="modeloHangar" action="searchHangar.htm">
-  		<form:label path="id">ID del hangar:</form:label>
-  		<form:input path="id"/>
+  		<form:label path="idHangar">ID del hangar:</form:label>
+  		<form:input path="idHangar"/>
 		<input type="submit" value="Buscar">
 	</form:form>
 	

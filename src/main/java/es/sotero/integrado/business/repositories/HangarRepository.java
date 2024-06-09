@@ -6,6 +6,6 @@ import es.sotero.integrado.business.entities.Hangar;
 
 public interface HangarRepository extends CrudRepository<Hangar, Long> {
 
-	public Hangar findById(int id);
+	public Hangar findByIdHangar(int id);
 	
 }

@@ -10,5 +10,9 @@ public interface AeronaveManager {
     
     public Aeronave getAeronave(int id);
     
-    public void deleteAeronave(int id);
+    public void addAeronave(Aeronave a);
+    
+    public void updateAeronave(Aeronave a);
+    
+    public void deleteAeronave(Aeronave a);
 }

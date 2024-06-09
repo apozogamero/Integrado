@@ -1,19 +1,28 @@
 package es.sotero.integrado.business.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name="piloto")
-public class Piloto{
+public class Piloto implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(generator = "secPiloto")
+	@SequenceGenerator(name = "secPiloto", sequenceName = "SEC_PILOTO", allocationSize = 1)
 	@Column(name="id")
-	public int id;
+	public int idPiloto;
+	
 	public String nombre;
+	
     public String dni;
+    
 	public char sexo;
+	
 	public int edad;
+	
 	@OneToOne(mappedBy = "piloto", fetch = FetchType.LAZY)
 	public Aeronave aeronave;
 
@@ -25,12 +34,12 @@ public class Piloto{
 		this.aeronave = aeronave;
 	}
 
-	public int getId() {
-		return id;
+	public int getIdPiloto() {
+		return idPiloto;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdPiloto(int id) {
+		this.idPiloto = id;
 	}
 	
 	public String getNombre() {

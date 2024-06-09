@@ -9,4 +9,10 @@ public interface PatrullaManager {
     public List<Patrulla> getPatrullaAll();
     
     public Patrulla getPatrulla(int id);
+    
+    public void addPatrulla(Patrulla p);
+    
+    public void updatePatrulla(Patrulla p);
+    
+    public void deletePatrulla(Patrulla p);
 }

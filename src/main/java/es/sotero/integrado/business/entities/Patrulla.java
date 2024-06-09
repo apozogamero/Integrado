@@ -1,5 +1,6 @@
 package es.sotero.integrado.business.entities;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.*;
@@ -9,12 +10,14 @@ import org.hibernate.annotations.LazyCollectionOption;
 
 @Entity
 @Table(name="patrulla")
-public class Patrulla {
+public class Patrulla implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
-	public int id;
+	public int idPatrulla;
 	
 	public String nombre;
 
@@ -26,12 +29,12 @@ public class Patrulla {
     @ManyToMany(mappedBy = "patrullaList")
     public List<Maniobra> maniobraList;
 
-	public int getId() {
-		return id;
+	public int getIdPatrulla() {
+		return idPatrulla;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdPatrulla(int idPatrulla) {
+		this.idPatrulla = idPatrulla;
 	}
 
 	public String getNombre() {

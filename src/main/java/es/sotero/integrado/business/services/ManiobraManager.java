@@ -9,4 +9,10 @@ public interface ManiobraManager {
     public List<Maniobra> getManiobraAll();
     
     public Maniobra getManiobra(int id);
+    
+    public void addManiobra(Maniobra m);
+    
+    public void updateManiobra(Maniobra m);
+    
+    public void deleteManiobra(Maniobra m);
 }

@@ -6,6 +6,6 @@ import es.sotero.integrado.business.entities.Patrulla;
 
 public interface PatrullaRepository extends CrudRepository<Patrulla, Long> {
 
-	public Patrulla findById(int id);
+	public Patrulla findByIdPatrulla(int id);
 	
 }

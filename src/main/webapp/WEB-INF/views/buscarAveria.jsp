@@ -10,8 +10,8 @@
 	<h1>Buscar Avería</h1>
 	
 	<form:form method="post" modelAttribute="modeloAveria" action="searchAveria.htm">
-  		<form:label path="id">ID de la avería:</form:label>
-  		<form:input path="id"/>
+  		<form:label path="idAveria">ID de la avería:</form:label>
+  		<form:input path="idAveria"/>
 		<input type="submit" value="Buscar">
 	</form:form>
 	

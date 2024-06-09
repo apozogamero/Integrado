@@ -36,9 +36,9 @@
 			<td>Descripción</td>
 			<td>Fecha</td>
 		</tr>
-		<c:forEach var="man" items="${model.listaMan}">
+		<c:forEach var="man" items="${model}">
 			<tr>
-				<th><c:out value="${man.id}"></c:out></th>
+				<th><c:out value="${man.idManiobra}"></c:out></th>
  				<th>
 					<c:forEach var="patrulla" items="${man.patrullaList}">
 					<c:out value="${patrulla.nombre}"></c:out><br/>
@@ -46,12 +46,15 @@
 				</th>
 				<th><c:out value="${man.descripcion}"></c:out></th>
 				<th><c:out value="${man.fecha}"></c:out></th>
+				<th><a href="editManiobra/${man.idManiobra}" class="btn btn-warning">Edit</a></th>
+				<th><a href="deleteManiobra/${man.idManiobra}" class="btn btn-danger">Delete</a></th>
 			</tr>
 		</c:forEach>
 	</table>
 	
 	<br/>
-	<a href="<c:url value="bienvenida.htm"/>">Volver</a>
+	<a href="addManiobra">Añadir maniobra</a><br/>
+	<a href="<c:url value="bienvenida.htm"/>">Volver</a><br/>
 	<a href="<c:url value="getManiobra.htm"/>">Buscar maniobra</a>
 </body>
-</html></html>
+</html>

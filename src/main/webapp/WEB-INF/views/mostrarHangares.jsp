@@ -36,9 +36,9 @@
 			<td>Capacidad</td>
 			<td>Aeronaves</td>
 		</tr>
-		<c:forEach var="han" items="${model.listaHan}">
+		<c:forEach var="han" items="${model}">
 			<tr>
-				<th><c:out value="${han.id}"></c:out></th>
+				<th><c:out value="${han.idHangar}"></c:out></th>
 				<th><c:out value="${han.nombre}"></c:out></th>
 				<th><c:out value="${han.capacidad}"></c:out></th>
 				<th>
@@ -51,7 +51,8 @@
 	</table>
 	
 	<br/>
-	<a href="<c:url value="bienvenida.htm"/>">Volver</a>
+	<a href="addHangar">Añadir hangar</a><br/>
+	<a href="<c:url value="bienvenida.htm"/>">Volver</a><br/>
 	<a href="<c:url value="getHangar.htm"/>">Buscar hangar</a>
 </body>
-</html></html>
+</html>

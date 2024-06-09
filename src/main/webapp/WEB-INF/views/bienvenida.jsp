@@ -24,25 +24,25 @@
 <body>
 	<h1>Integrado</h1>
 	<div>
-    	<a href="<c:url value="getPilotoAll.htm"/>">PILOTOS</a>
+    	<a href="getPilotoAll">PILOTOS</a>
 	</div>
 	<div>
-    	<a href="<c:url value="getAeronaveAll.htm"/>">AERONAVES</a>
+    	<a href="getAeronaveAll">AERONAVES</a>
 	</div>
 	<div>
-    	<a href="<c:url value="getModeloAll.htm"/>">MODELOS</a>
+    	<a href="getModeloAll">MODELOS</a>
 	</div>
 	<div>
-    	<a href="<c:url value="getHangarAll.htm"/>">HANGARES</a>
+    	<a href="getHangarAll">HANGARES</a>
 	</div>
 	<div>
-    	<a href="<c:url value="getPatrullaAll.htm"/>">PATRULLAS</a>
+    	<a href="getPatrullaAll">PATRULLAS</a>
 	</div>
 	<div>
-    	<a href="<c:url value="getManiobraAll.htm"/>">MANIOBRAS</a>
+    	<a href="getManiobraAll">MANIOBRAS</a>
 	</div>
 	<div>
-    	<a href="<c:url value="getAveriaAll.htm"/>">AVERÍAS</a>
+    	<a href="getAveriaAll">AVERÍAS</a>
 	</div>
 </body>
 </html>

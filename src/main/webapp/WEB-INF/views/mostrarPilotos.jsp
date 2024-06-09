@@ -38,20 +38,23 @@
 			<td>Edad</td>
  			<td>Aeronave</td>
 		</tr>
-		<c:forEach var="pil" items="${model.listaPil}">
+		<c:forEach var="pil" items="${model}">
 			<tr>
-				<th><c:out value="${pil.id}"></c:out></th>
+				<th><c:out value="${pil.idPiloto}"></c:out></th>
 				<th><c:out value="${pil.nombre}"></c:out></th>
 				<th><c:out value="${pil.dni}"></c:out></th>
 				<th><c:out value="${pil.sexo}"></c:out></th>
 				<th><c:out value="${pil.edad}"></c:out></th>
-				<th><c:out value="${pil.aeronave.id}"></c:out></th>
+				<th><c:out value="${pil.aeronave.idAeronave}"></c:out></th>
+				<th><a href="editPiloto/${pil.idPiloto}" class="btn btn-warning">Edit</a></th>
+				<th><a href="deletePiloto/${pil.idPiloto}" class="btn btn-danger">Delete</a></th>
 			</tr>
 		</c:forEach>
 	</table>
 	
 	<br/>
-	<a href="<c:url value="bienvenida.htm"/>">Volver</a>
+	<a href="addPiloto">Añadir piloto</a><br/>
+	<a href="<c:url value="bienvenida.htm"/>">Volver</a><br/>
 	<a href="<c:url value="getPiloto.htm"/>">Buscar piloto</a>
 </body>
-</html></html>
+</html>

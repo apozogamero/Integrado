@@ -1,17 +1,21 @@
 package es.sotero.integrado.business.entities;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="averia")
-public class Averia {
+public class Averia implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(generator = "secAveria")
+	@SequenceGenerator(name = "secAveria", sequenceName = "SEC_AVERIA", allocationSize = 1)
 	@Column(name="id")
-	public int id;
+	public int idAveria;
 	
 	@ManyToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name="id_aeronave")
@@ -21,12 +25,12 @@ public class Averia {
 	
 	public Date fecha;
 	
-	public int getId() {
-		return id;
+	public int getIdAveria() {
+		return idAveria;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setIdAveria(int idAveria) {
+		this.idAveria = idAveria;
 	}
 
 	public String getDescripcion() {

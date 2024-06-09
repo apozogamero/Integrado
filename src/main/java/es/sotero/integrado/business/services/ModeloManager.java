@@ -9,4 +9,10 @@ public interface ModeloManager {
     public List<Modelo> getModeloAll();
     
     public Modelo getModelo(int id);
+    
+    public void addModelo(Modelo m);
+    
+    public void updateModelo(Modelo m);
+    
+    public void deleteModelo(Modelo m);
 }

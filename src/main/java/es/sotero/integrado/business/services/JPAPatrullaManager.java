@@ -12,14 +12,26 @@ import es.sotero.integrado.business.repositories.PatrullaRepository;
 public class JPAPatrullaManager implements PatrullaManager {
 
     @Autowired
-    private PatrullaRepository patRepository;
+    private PatrullaRepository patRep;
 
     public List<Patrulla> getPatrullaAll() {
-        return (List<Patrulla>) patRepository.findAll();
+        return (List<Patrulla>) patRep.findAll();
     }
 
 	@Override
 	public Patrulla getPatrulla(int id) {
-		return patRepository.findById(id);
+		return patRep.findByIdPatrulla(id);
 	}
+    
+    public void addPatrulla(Patrulla p) {
+    	patRep.save(p);
+    }
+    
+    public void updatePatrulla(Patrulla p) {
+    	patRep.save(p);
+    }
+    
+    public void deletePatrulla(Patrulla p) {
+    	patRep.delete(p);
+    }
 }

@@ -27,7 +27,7 @@
 	</style>
 </head>
 <body>
-	<h1>Resultado de la búsqueda con ID <c:out value="${model.id}"></c:out></h1>
+	<h1>Resultado de la búsqueda con ID <c:out value="${model.idPatrulla}"></c:out></h1>
 
 	<table>
 		<tr>
@@ -37,7 +37,7 @@
 			<td>Maniobras</td>
 		</tr>
 		<tr>
-			<th><c:out value="${model.id}"></c:out></th>
+			<th><c:out value="${model.idPatrulla}"></c:out></th>
 			<th><c:out value="${model.nombre}"></c:out></th>
 			<th>
 				<c:forEach var="aeronave" items="${model.aeronaveList}">
@@ -46,7 +46,7 @@
 			</th>
 			<th>
 				<c:forEach var="maniobra" items="${model.maniobraList}">
-				<c:out value="${maniobra.id}"></c:out><br/>
+				<c:out value="${maniobra.idManiobra}"></c:out><br/>
 				</c:forEach>
 			</th>
 		</tr>

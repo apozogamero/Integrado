@@ -12,14 +12,26 @@ import es.sotero.integrado.business.repositories.ManiobraRepository;
 public class JPAManiobraManager implements ManiobraManager {
 
     @Autowired
-    private ManiobraRepository manRepository;
+    private ManiobraRepository manRep;
 
     public List<Maniobra> getManiobraAll() {
-        return (List<Maniobra>) manRepository.findAll();
+        return (List<Maniobra>) manRep.findAll();
     }
 
 	@Override
 	public Maniobra getManiobra(int id) {
-		return manRepository.findById(id);
+		return manRep.findByIdManiobra(id);
 	}
+    
+    public void addManiobra(Maniobra m) {
+    	manRep.save(m);
+    }
+    
+    public void updateManiobra(Maniobra m) {
+    	manRep.save(m);
+    }
+    
+    public void deleteManiobra(Maniobra m) {
+    	manRep.delete(m);
+    }
 }

@@ -6,6 +6,6 @@ import es.sotero.integrado.business.entities.Maniobra;
 
 public interface ManiobraRepository extends CrudRepository<Maniobra, Long> {
 
-	public Maniobra findById(int id);
+	public Maniobra findByIdManiobra(int id);
 	
 }

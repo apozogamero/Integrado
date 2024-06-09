@@ -39,25 +39,28 @@
 			<td>Patrulla</td>
 			<td>Averías</td>
 		</tr>
-		<c:forEach var="aer" items="${model.listaAer}">
+		<c:forEach var="aer" items="${model}">
 			<tr>
-				<th><c:out value="${aer.id}"></c:out></th>
+				<th><c:out value="${aer.idAeronave}"></c:out></th>
 				<th><c:out value="${aer.nombre}"></c:out></th>
 				<th><c:out value="${aer.modelo.nombre}"></c:out></th>
 				<th><c:out value="${aer.piloto.nombre}"></c:out></th>
-				<th><c:out value="${aer.hangar.id}"></c:out></th>
+				<th><c:out value="${aer.hangar.idHangar}"></c:out></th>
 				<th><c:out value="${aer.patrulla.nombre}"></c:out></th>
 				<th>
 					<c:forEach var="averia" items="${aer.averiaList}">
-					<c:out value="${averia.id}"></c:out><br/>
+					<c:out value="${averia.idAveria}"></c:out><br/>
 					</c:forEach>
 				</th>
+				<th><a href="editAeronave/${aer.idAeronave}" class="btn btn-warning">Edit</a></th>
+				<th><a href="deleteAeronave/${aer.idAeronave}" class="btn btn-danger">Delete</a></th>
 			</tr>
 		</c:forEach>
 	</table>
 	
 	<br/>
-	<a href="<c:url value="bienvenida.htm"/>">Volver</a>
+	<a href="addAeronave">Añadir Aeronave</a><br/>
+	<a href="<c:url value="bienvenida.htm"/>">Volver</a><br/>
 	<a href="<c:url value="getAeronave.htm"/>">Buscar aeronave</a>
 </body>
 </html></html>

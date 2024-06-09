@@ -37,7 +37,7 @@
 			<td>Fecha</td>
 		</tr>
 		<tr>
-			<th><c:out value="${model.id}"></c:out></th>
+			<th><c:out value="${model.idAveria}"></c:out></th>
 			<th><c:out value="${model.aeronave.nombre}"></c:out></th>
 			<th><c:out value="${model.descripcion}"></c:out></th>
 			<th><c:out value="${model.fecha}"></c:out></th>
